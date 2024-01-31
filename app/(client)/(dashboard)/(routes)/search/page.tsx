@@ -5,23 +5,18 @@ import { redirect } from "next/navigation";
 import { SearchInput } from "@/components/search-input";
 import { CoursesList } from "@/components/courses-list";
 
-import { Categories } from "./_components/Categories";
-import { getCourseCategories, getSearchCourses } from "@/lib/apis";
+import { getSearchCourses } from "@/lib/apis";
 import { Category, Course } from "@/models/typings";
 import { getProgress } from "@/actions/get-progress";
 import sanityClient from "@/lib/sanityClient";
+
+import { CourseWithProgressWithCategory } from "@/models/typings";
 
 interface SearchPageProps {
   searchParams: {
     title: string;
     categoryId: string;
   }
-};
-
-type CourseWithProgressWithCategory = Course & {
-  category: Category | null;
-  chapters: { _ref: string }[];
-  progress: number | null;
 };
 
 const SearchPage = async ({
