@@ -1,11 +1,10 @@
 // app/create-sanity-user/route.ts
 
-import { NextApiRequest } from "next";
 import sanityClient from "@/lib/sanityClient";
 import { currentUser } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 
-export const GET = async (req: NextApiRequest) => {
+export const GET = async (req: Request) => {
     
   const user = await currentUser();
   if (!user) {
