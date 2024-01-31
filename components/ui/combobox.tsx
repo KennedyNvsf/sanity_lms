@@ -20,8 +20,8 @@ import {
 
 interface ComboboxProps {
     options: {label: string; value: string}[];
-    value?: { _ref: string };
-    onChange: (value: string) => void;
+    value?: { _ref: string | undefined };
+    onChange: (value: any) => void;
 }
 
 export const Combobox = ({
@@ -64,7 +64,7 @@ export const Combobox = ({
                 <Check
                   className={cn(
                     "mr-2 h-4 w-4",
-                    value._ref === option.value ? "opacity-100" : "opacity-0"
+                    value?._ref === option.value ? "opacity-100" : "opacity-0"
                   )}
                 />
                 {option.label}
