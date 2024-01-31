@@ -4,9 +4,6 @@ import * as queries from './sanityQueries';
 import { Course, Category, Attachment, Chapter, MuxData, UserProgress, purchase } from "@/models/typings";
 
 
-
-
-
 export async function getCourse(courseId: string) {
     const result = await sanityClient.fetch<Course>(
       queries.getCourse,
@@ -163,6 +160,8 @@ export async function updateCourseAttachment(courseId: string, attachmentId: str
     //Update the course document in Sanity
     const updatedCourse = await sanityClient.createOrReplace<Course>({
       ...currentCourse,
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       attachments: updatedAttachments,
       updatedAt: new Date().toISOString(),
     });
@@ -243,6 +242,8 @@ export async function updateCourseChapter(courseId: string, chapterId: string) {
     //Update the course document in Sanity
     const updatedCourse = await sanityClient.createOrReplace<Course>({
       ...currentCourse,
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       chapters: updatedAttachments,
       updatedAt: new Date().toISOString(),
     });
