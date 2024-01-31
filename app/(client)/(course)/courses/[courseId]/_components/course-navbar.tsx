@@ -5,11 +5,7 @@ import { NavbarRoutes } from "@/components/navbar-routes";
 import { CourseMobileSidebar } from "./course-mobile-sidebar";
 
 interface CourseNavbarProps {
-  course: Course & {
-    chapters: (Chapter & {
-      userProgress: UserProgress[] | null;
-    })[];
-  };
+  course: Course;
   progressCount: number;
 };
 

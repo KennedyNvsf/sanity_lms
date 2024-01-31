@@ -8,11 +8,7 @@ import { CourseSidebarItem } from "./course-sidebar-item";
 import { getCourseChapters, getPurchase } from "@/lib/apis";
 
 interface CourseSidebarProps {
-  course: Course & {
-    chapters: (Chapter & {
-      userProgress: UserProgress[] | null;
-    })[]
-  };
+  course: Course;
   progressCount: number;
 };
 
