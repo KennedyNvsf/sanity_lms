@@ -38,7 +38,7 @@ export async function getEnrolledCourse(courseId: string, userId: string) {
 }
 
 export async function getStudentCourses( userId: string) {
-  const result = await sanityClient.fetch<Course>(
+  const result = await sanityClient.fetch<Course[]>(
     queries.getStudentCourse,
     {userId},
     { cache: 'no-cache'}
