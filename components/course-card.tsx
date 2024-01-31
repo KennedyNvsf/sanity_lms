@@ -14,7 +14,7 @@ interface CourseCardProps {
   price: number;
   progress: number | null;
   category: string;
-  purchase: string;
+  purchase: string | undefined;
 };
 
 export const CourseCard = ({

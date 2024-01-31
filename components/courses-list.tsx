@@ -2,13 +2,8 @@ import { Course, Category, purchase } from "@/models/typings";
 
 import { CourseCard } from "@/components/course-card";
 
-type CourseWithProgressWithCategory = Course & {
-  category: Category | null;
-  chapters: { _id: string }[];
-  progress: number | null;
-  purchase: purchase | null;
+import { CourseWithProgressWithCategory } from "@/models/typings";
 
-};
 
 interface CoursesListProps {
   items: CourseWithProgressWithCategory[];

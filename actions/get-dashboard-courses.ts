@@ -3,11 +3,7 @@ import { Course, Category, Chapter } from "@/models/typings";
 import sanityClient from "@/lib/sanityClient";
 import { getProgress } from "@/actions/get-progress";
 
-type CourseWithProgressWithCategory = Course & {
-  category: Category;
-  chapters: Chapter[];
-  progress: number | null;
-};
+import { CourseWithProgressWithCategory } from "@/models/typings";
 
 type DashboardCourses = {
   completedCourses: CourseWithProgressWithCategory[];

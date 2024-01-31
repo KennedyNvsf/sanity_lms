@@ -99,3 +99,11 @@ export type Course = {
     createdAt?: string;
     updatedAt?: string;
 }
+
+
+export type CourseWithProgressWithCategory = Course & {
+    category: Category;
+    chapters: Chapter[];
+    progress: number | null;
+    purchase?: purchase | null;
+};
